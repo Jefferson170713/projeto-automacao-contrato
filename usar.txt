@@ -1,0 +1,13 @@
+# Comando para usar a máquina virtual "venv"
+.\venv\Scripts\activate
+
+
+# Comando para atualizar o gerenciador de pacotes
+python.exe -m pip install --upgrade pip
+
+
+# comando para instalar as dependências "requirements.txt"
+pip install -r requirements.txt
+
+# comando para compilar
+pyinstaller --onefile --windowed --add-data "Arquivos/hapvida_inside_circle.svg;Arquivos" script_aditivo.py

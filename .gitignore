@@ -1,0 +1,10 @@
+Arquivos/*.docx
+build/
+dist/
+Pasta teste/
+venv/
+__pycache__/
+*exe
+modelo.ipynb
+modelo_ordem_servico.csv
+*.spec
