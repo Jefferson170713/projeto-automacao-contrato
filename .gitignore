@@ -1,6 +1,7 @@
 Arquivos/*.docx
 build/
 dist/
+Contratos_Gerados/
 Pasta teste/
 venv/
 __pycache__/
