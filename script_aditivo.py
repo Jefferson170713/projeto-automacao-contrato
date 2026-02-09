@@ -29,8 +29,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.df = pd.DataFrame()
         self.path_contract_aditivo = r'./Arquivos/CONTRATO ADITIVO PADRÃO.docx'
-        self.path_contract_recisao_com_aviso = r'./Arquivos/RECISÃO CONTRATUAL - HAP - NOTIFICAÇÃO COM AVISO.docx'
-        self.path_contract_recisao_sem_aviso = r'./Arquivos/RECISÃO CONTRATUAL - HAP - NOTIFICAÇÃO SEM AVISO.docx'
+        self.path_contract_recisao_com_aviso = r'./Arquivos/DISTRATO MODELO ATUALIZADO - COM AVISO.docx'
+        self.path_contract_recisao_sem_aviso = r'./Arquivos/DISTRATO MODELO ATUALIZADO - SEM AVISO.docx'
         self.path_csv = str()
         self.path_folder = str()
         self.list_remove_docx = []
@@ -236,11 +236,16 @@ class MainWindow(QMainWindow):
 
         for num, razao_social in enumerate(self.df['RAZAO_SOCIAL']):
             dict_modification = {
-                "[DATA_DESLIGAMENTO]" : self.df['DATA_DESLIGAMENTO'].iloc[num],
-                "[NOME_CONTRATADA]" : self.df['RAZAO_SOCIAL'].iloc[num],
-                "[CNPJ_CONTRATADA]": self.df['CNPJ'].iloc[num],
-                "[DATA_CONTRATACAO]": self.df['DATA_CONTRATACAO'].iloc[num],
-                "@dia@": self.df['DIAS_EFEITO'].iloc[num],
+                "XRAZAO_SOCIALX" : self.df['RAZAO_SOCIAL'].iloc[num],
+                "XDATA_1X" : self.df['DATA_DESLIGAMENTO'].iloc[num],
+                "XDATA_2X": self.df['DATA_CONTRATACAO'].iloc[num],
+                "XCNPJX": self.df['CNPJ'].iloc[num],
+                "XAVISOX": self.df['DIAS_EFEITO'].iloc[num],
+                "XCIDADEX": self.df['CIDADE'].iloc[num],
+                "XENDERECOX": self.df['ENDERECO'].iloc[num],
+                "XLOCAL_NUMEROX": self.df['NUMERO'].iloc[num],
+                "XBAIRROX": self.df['BAIRRO'].iloc[num],
+                "XCEPX": self.df['CEP'].iloc[num],
             }
 
             nome_file_save = self.df['NOME'].iloc[num]
@@ -272,10 +277,16 @@ class MainWindow(QMainWindow):
 
         for num, razao_social in enumerate(self.df['RAZAO_SOCIAL']):
             dict_modification = {
-                "[DATA_DESLIGAMENTO]" : self.df['DATA_DESLIGAMENTO'].iloc[num],
-                "[NOME_CONTRATADA]" : self.df['RAZAO_SOCIAL'].iloc[num],
-                "[CNPJ_CONTRATADA]": self.df['CNPJ'].iloc[num],
-                "[DATA_CONTRATACAO]": self.df['DATA_CONTRATACAO'].iloc[num],
+                "XRAZAO_SOCIALX" : self.df['RAZAO_SOCIAL'].iloc[num],
+                "XDATA_1X" : self.df['DATA_DESLIGAMENTO'].iloc[num],
+                "XDATA_2X": self.df['DATA_CONTRATACAO'].iloc[num],
+                "XCNPJX": self.df['CNPJ'].iloc[num],
+                # "XAVISOX": self.df['DIAS_EFEITO'].iloc[num],
+                "XCIDADEX": self.df['CIDADE'].iloc[num],
+                "XENDERECOX": self.df['ENDERECO'].iloc[num],
+                "XLOCAL_NUMEROX": self.df['NUMERO'].iloc[num],
+                "XBAIRROX": self.df['BAIRRO'].iloc[num],
+                "XCEPX": self.df['CEP'].iloc[num],
             }
 
             name_file_save = self.df['NOME'].iloc[num]
