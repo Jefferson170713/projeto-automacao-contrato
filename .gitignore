@@ -10,4 +10,4 @@ __pycache__/
 modelo.ipynb
 modelo_ordem_servico.csv
 *.spec
-*/csv
+*.csv
