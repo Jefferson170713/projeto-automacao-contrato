@@ -1,4 +1,5 @@
 Arquivos/*.docx
+Arquivos/*.doc
 build/
 dist/
 Contratos_Gerados/
